@@ -11,7 +11,7 @@
         "control",
         "board"
     ],
-    "homepage": "https://github.com/regionelombardia-open20/cms-dashboard",
+    "homepage": "https://bitbucket.org/open20/cms-dashboard",
     "type": "component",
     "require": {
         "php": ">=7.0.0",
