@@ -16,6 +16,7 @@ use open20\cms\dashboard\Module;
 use app\modules\cms\models\Nav;
 use app\modules\cms\models\NavItem;
 use app\modules\cms\models\NavItemPage;
+use Exception;
 
 /**
  * Description of Utility
@@ -858,7 +859,7 @@ class Utility
 
         $i = 0;
         $modules = \Yii::$app->getModules();
-        while (!in_array($alias, self::BLACKLIST_ALIAS) && !array_key_exists($alia, $modules) && ((self::checkSeoSlug($alias) && self::checkNavSlug($alias)) == false) && $i < 1000) {
+        while (!in_array($alias, self::BLACKLIST_ALIAS) && !array_key_exists($alias, $modules) && ((self::checkSeoSlug($alias) && self::checkNavSlug($alias)) == false) && $i < 1000) {
             $i++;
             $number = 1;
             if (strrpos($alias, '-') == (strlen($alias) - 1)) {
@@ -994,7 +995,7 @@ class Utility
         return $bozza->one();
     }
 
-    public function getImageNavArray()
+    public static function getImageNavArray()
     {
         $images = [];
         $navitems = NavItem::find()

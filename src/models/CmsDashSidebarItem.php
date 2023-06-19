@@ -49,9 +49,9 @@ class CmsDashSidebarItem extends \open20\cms\dashboard\models\base\CmsDashSideba
                 ]);
     }
 
-    public static function getEditFields()
+    public function getEditFields()
     {
-        $labels = self::attributeLabels();
+        $labels = $this->attributeLabels();
 
         return [
             [
